@@ -7,24 +7,23 @@
         <h3 class="main">My Brewery Visits</h3>
 
         <div class="brewList">
-            <table class="table table-hover table-bordered table-responsive table-condensed">
+            <table class="table table-hover">
                 <thead>
                     <tr class="main-table-list">
                         <th class="main-brewery"><b>Brewery</b></th>
                         <th class="main-date"> <b>Location</b></th>
                         <th class="main-date"> <b>Date</b></th>
-
                         <!-- <th>Delete</th> -->
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="visit in mc.visitList">
+                    <tr scope="row" ng-repeat="visit in mc.visitList">
 
-                        <td ng-model="visit.brewery">{{visit.brewery}}
-
+                        <td ng-model="visit.brewery">
+                            <a href="https://www.google.com/maps/search/{{visit.brewery}} {{visit.location}}">{{visit.brewery}}</a>
                         </td>
-                        <td ng-model="visit.location"><a href="https://www.google.com/maps/search/{{visit.brewery}} {{visit.location}}">
-                {{visit.location}}</a> </td>
+                        <td ng-model="visit.location">
+                            {{visit.location}}</td>
                         <td>{{visit.date_had | date: 'd MMMM, yyyy'}}
                             <!-- <button type="button" class="btn btn-danger btn-sm" id="nuclearButton" ng-click="mc.deleteVisit(mc.visit.id)"> -->
                             <!-- <span class="fa fa-trash-o"> delete visit</span></button> -->
@@ -57,7 +56,7 @@
             </div>
             <div class="form-group breweryNotes breweryNotesMain">
                 <label>Notes about the Brewery:</label>
-                <textarea class="form-control" type="text" ng-model="mc.newBeer.b_notes" rows="10"></textarea>
+                <textarea class="form-control" type="text" ng-model="mc.newBeer.b_notes" rows="5"></textarea>
             </div>
             <div class="addNewButton">
                 <button ng-click="mc.addNewVisit(mc.newBeer)" type="button" class="btn btn-success" action="'/#!visits/' + 'visitID'">

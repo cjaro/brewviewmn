@@ -97,7 +97,7 @@ input {
 .navbar-brand>img {
     height: 100%;
     padding: 0px;
-    width: auto;
+    width: 100px;
     /*opacity: 0.75;*/
 }
 
@@ -114,6 +114,15 @@ img:hover {
 
 .mainVisitsScreen {
     display: flex;
+    padding: 0
+}
+
+.mainVisitsScreen>div.col-md-9 {
+    padding: 0
+}
+
+.mainVisitsScreen>div.col-md-3 {
+    padding: 0 0 0 5px
 }
 
 .mainVisitsScreen>div>h3 {
@@ -163,6 +172,11 @@ img:hover {
 
 
 /* VISIT-DETAILS.HTML */
+
+.outer-visit-list {
+    display: flex;
+    padding: 0;
+}
 
 .visit-list {
     padding: 0 5px 0 0;
